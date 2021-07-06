@@ -59,7 +59,13 @@ new Vue(
                     let index = this.starred.indexOf(id);
                     this.starred.splice(index,1);
                 }               
-            },            
+            },
+            sendCandidacy: function (index) {
+                if (!this.applied.includes(index)) {
+                    this.applied.push(index);
+                    this.display();
+                } 
+            }        
         }
     }
 );

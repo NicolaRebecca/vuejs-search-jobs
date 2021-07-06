@@ -16,12 +16,17 @@
         <div class="jobs-list" v-for="(jobList,index) in jobs">
             
             <div class="info-job">
-                <h4> {{jobList.company}}, {{jobList.city}}</h4> <h6> pubblicato il: {{jobList.created_at}}</h6>
-                <h6>{{jobList.position}},  {{jobList.contract}}</h6>
-                <span>{{jobList.description}}</span>
-                <i v-if="!starred.includes(index)" @click="addFav(index)" class="far fa-star"></i>
-                <i v-else @click="removeFav(index)" class="fas fa-star"></i>
+                <div class="company-info">
+                    <h6> pubblicato il: {{jobList.created_at}}</h6> 
+                    <h3> {{jobList.company}}, {{jobList.city}}</h3> 
+                </div>
+                <h6>{{jobList.position}},  {{jobList.contract}}</h6> 
+                <span>{{jobList.description}}</span> <br> <br>
+                <i v-if="!starred.includes(index)" @click="addFav(index)" class="far fa-star"></i> 
+                <i v-else @click="removeFav(index)" class="fas fa-star"></i> aggiungi ai preferiti
                 <br> <br>
+                <button @click="sendCandidacy(jobList.id)" v-if="!applied.includes(jobList.id)">Invia Candidatura</button>
+                <button v-else @click>Candidatura Inviata</button>
             </div>
         </div>
 

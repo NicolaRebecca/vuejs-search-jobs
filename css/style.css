@@ -1,0 +1,11 @@
+.info-job{
+    margin: 0 auto;
+    width: 1200px;
+    background-color: antiquewhite;
+}
+
+.company-info h6{
+    float: right;
+    bottom:30px;
+    
+}
