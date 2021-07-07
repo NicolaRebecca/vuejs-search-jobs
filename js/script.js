@@ -63,7 +63,7 @@ new Vue(
             sendCandidacy: function (index) {
                 if (!this.applied.includes(index)) {
                     this.applied.push(index);
-                    this.display();
+                    
                 } 
             }        
         }
